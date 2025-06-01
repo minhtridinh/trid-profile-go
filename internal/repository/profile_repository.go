@@ -1,7 +1,7 @@
 package repository
 
 import (
-	"github.com/dinhminhtri/triD-profile/internal/model"
+	"github.com/minhtridinh/trid-profile-go/internal/model"
 	"gorm.io/gorm"
 )
 

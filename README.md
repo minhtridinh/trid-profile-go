@@ -13,7 +13,7 @@ A RESTful API for managing user profiles, built with Go, Gin, and PostgreSQL.
 1. Clone the repository:
 
    ```bash
-   git clone github.com/dinhminhtri/triD-profile
+   git clone github.com/minhtridinh/trid-profile-go
    ```
 
 2. Install dependencies:

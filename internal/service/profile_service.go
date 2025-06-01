@@ -1,8 +1,8 @@
 package service
 
 import (
-	"github.com/dinhminhtri/triD-profile/internal/model"
-	"github.com/dinhminhtri/triD-profile/internal/repository"
+	"github.com/minhtridinh/trid-profile-go/internal/model"
+	"github.com/minhtridinh/trid-profile-go/internal/repository"
 )
 
 type ProfileService struct {

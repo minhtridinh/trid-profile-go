@@ -25,7 +25,12 @@ func InitDB(dsn string) *gorm.DB {
 	if err != nil {
 		log.Fatal("Failed to connect to MySQL server:", err)
 	}
-	defer sqlDB.Close()
+	defer func(sqlDB *sql.DB) {
+		err := sqlDB.Close()
+		if err != nil {
+
+		}
+	}(sqlDB)
 
 	// Create database if it doesn't exist
 	_, err = sqlDB.Exec(fmt.Sprintf("CREATE DATABASE IF NOT EXISTS %s", dbName))

@@ -1,0 +1,50 @@
+# Binaries for programs and plugins
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+
+# Go specific
+/vendor/
+/go.work
+/go.work.sum
+
+# IDE specific files
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+dataSources.xml
+dataSources/
+.idea/dataSources.xml
+.idea/dataSources/
+
+# Environment files
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Keep .env example but ignore actual .env (already committed)
+.env
+
+# Logs
+*.log
+logs/
+
+# Build directory
+/bin/
+/build/
+/dist/
+
+# Temporary files
+/tmp/
+/temp/
+
+# Test coverage output
+coverage.txt
+profile.out

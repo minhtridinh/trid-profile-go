@@ -2,8 +2,11 @@ package main
 
 import (
 	"fmt"
+	"github.com/minhtridinh/trid-profile-go/internal/api"
 	"github.com/minhtridinh/trid-profile-go/internal/config"
 	"github.com/minhtridinh/trid-profile-go/internal/database"
+	"github.com/minhtridinh/trid-profile-go/internal/repository"
+	"github.com/minhtridinh/trid-profile-go/internal/service"
 	"log"
 )
 
@@ -28,4 +31,25 @@ func main() {
 
 	fmt.Println("Database connected successfully!")
 	fmt.Println("Migrations completed successfully!")
+
+	// Initialize repositories
+	userRepo := repository.NewUserRepository(db)
+
+	// Initialize services
+	userService := service.NewUserService(userRepo)
+
+	// Initialize router
+	router := api.SetupRouter(userService)
+
+	// Start HTTP server
+	port := cfg.Port
+	if port == "" {
+		port = "8080" // Default port if not specified in config
+	}
+
+	fmt.Printf("Starting server on port %s...\n", port)
+	err = router.Run(":" + port)
+	if err != nil {
+		log.Fatal("Failed to start server:", err)
+	}
 }
